@@ -35,7 +35,7 @@ class DynamicSitesMiddleware(object):
         self.env_domain_requested = None
         self._old_TEMPLATE_DIRS = getattr(settings, "TEMPLATE_DIRS", None)
 
-        if self.domain == 'testserver':
+        if 'boxofawesome.tv' not in self.domain and 'boxofomg.tv' not in self.domain:
             self.domain = all_sites().get(id=0).domain
 
         # main loop - lookup the site by domain/subdomain, plucking 
